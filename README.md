@@ -26,7 +26,9 @@
 .サウナ環境の良いお店を探したいなと考えた時
 
 ## 設計書
-<...>
+.WBS (https://docs.google.com/spreadsheets/d/1tmzEiZ5-I9dEdyVnR-mlksNGACwtuNSKp9DKiLrnrS0/edit#gid=1839990607)
+.
+.
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1x9z1hF7epnjPUKSVHan7OXQqu5XXk7hiztxnf4b9WQQ/edit#gid=1213881035>
