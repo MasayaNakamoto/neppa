@@ -27,7 +27,7 @@
 
 ## 設計書
 .WBS (https://docs.google.com/spreadsheets/d/1tmzEiZ5-I9dEdyVnR-mlksNGACwtuNSKp9DKiLrnrS0/edit#gid=1839990607)
-.
+.ER図（https://app.diagrams.net/#G1wzh4iIrYOrULh_Q-KYueEzEqakYwmqHM）
 .
 
 ## チャレンジ要素一覧
