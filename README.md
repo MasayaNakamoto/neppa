@@ -33,7 +33,7 @@
 .WBS (https://docs.google.com/spreadsheets/d/1tmzEiZ5-I9dEdyVnR-mlksNGACwtuNSKp9DKiLrnrS0/edit#gid=1839990607)
 .ER図（https://app.diagrams.net/#G1wzh4iIrYOrULh_Q-KYueEzEqakYwmqHM）
 .テーブル定義書（https://docs.google.com/spreadsheets/d/17KPHFCThwQP4GXS8it0tywqTUaXOosHsWn9fZHwUHX0/edit#gid=1052674425）
-.
+.アプリケーション詳細設計（https://docs.google.com/spreadsheets/d/1rt-6v83PZNxbbD8VIFO2gW58IerIxZyext-QFFyzixY/edit#gid=2133469642）
 .
 
 ## チャレンジ要素一覧
