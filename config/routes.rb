@@ -14,25 +14,25 @@ Rails.application.routes.draw do
   registrations: 'customers/registrations'
 }
 
+root to: 'homes#top'
+get 'homes/about'  => 'homes#about'
+
+  resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+
   namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
+    root to: "homes#top"
+    get '/index/:id' => 'homes#index'
+    resources :items, only: [:index, :new, :create, :show, :edit, :update]
+    resources :shops, only: [:index, :new, :create, :show, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update]
+    resources :customers, only:[:index, :show, :edit, :update]
+    resources :orders, only: [:show, :update]
+    resources :order_details, only: [:update]
+    post 'order_details/:id' => 'orders#show'
   end
-  namespace :admin do
-    get 'genres/index'
-  end
-  namespace :admin do
-    get 'shops/index'
-    get 'shops/new'
-    get 'shops/show'
-    post 'shops/create'
-  end
-  namespace :admin do
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    post 'items/create'
-  end
+
+
+
   get 'shops/index'
   get 'shops/show'
   get 'orders/new'
@@ -46,6 +46,5 @@ Rails.application.routes.draw do
   get 'items/index'
   get 'items/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'homes#top'
-  get 'homes/about'  => 'homes#about'
+
 end
