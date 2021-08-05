@@ -1,1 +1,8 @@
 <h1>商品一覧</h1>
+<% @items.each do |item| %>
+  <P>ID</P><%= item.id %>
+  <P>NAME</P><%= item.name %>
+  <P>TEXT</P><%= item.introduction %>
+  <P>STATUS</P><%= item.is_active %>
+  <P>PRICE</P> <%= item.price %>
+<% end %>

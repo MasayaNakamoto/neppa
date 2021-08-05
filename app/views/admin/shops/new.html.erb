@@ -2,7 +2,7 @@
 <table class="table table-borderless">
 <%= form_with model:@shop, :url => {:action => :create} do |f| %>
   <tr>
-    <th><%#= f.label :商品画像 %></th>
+    <th><%= f.label :店舗画像 %></th>
     <th><%#= f.attachment_field :image, class: "form-control-file" %></th>
   </tr>
   <tr>
@@ -14,8 +14,8 @@
     <th><%= f.text_area :introduction, placeholder: "ここに説明文を記述します", class: "form-control" %></th>
   </tr>
   <tr>
-    <th><%#= f.label :ジャンル %></th>
-    <th><%#= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "--選択してください--", class: "form-control" %></th>
+    <th><%= f.label :エリア %></th>
+    <th><%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "--選択してください--", class: "form-control" %></th>
   </tr>
   <tr>
     <th><%= f.label :利用価格（税抜） %></th>
@@ -24,7 +24,23 @@
   <tr>
     <th><%= f.label :郵便番号 %></th>
     <th><%= f.text_field :postal_code, placeholder: "1234567", class: "form-control"  %></th>
-  <%= f.submit '新規登録', class: "btn btn-success" %>
-<% end %>
+  </tr>
+  <tr>
+    <th><%= f.label :住所 %></th>
+    <th><%= f.text_field :address, placeholder: "京都市ー", class: "form-control"  %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :電話番号 %></th>
+    <th><%= f.text_field :phone_number, placeholder: "075XXXXXX", class: "form-control"  %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :ホームページ %></th>
+    <th><%= f.text_field :homepage, placeholder: "https-", class: "form-control"  %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :サウナ情報 %></th>
+    <th><%= f.text_area :sauna, placeholder: "サウナ、水風呂の位置や外気浴ができるか否かなど", class: "form-control"  %></th>
   </tr>
 </table>
+　<%= f.submit '新規登録', class: "btn btn-success" %>
+<% end %>

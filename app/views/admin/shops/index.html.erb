@@ -1,2 +1,8 @@
-<h1>Admin::Shops#index</h1>
-<p>Find me in app/views/admin/shops/index.html.erb</p>
+<h1>店舗一覧</h1>
+<% @shops.each do |shop| %>
+  <P>ID</P><%= shop.id %>
+  <P>NAME</P><%= shop.name %>
+  <P>TEXT</P><%= shop.introduction %>
+  <P>STATUS</P><%= shop.sauna %>
+  <P>PRICE</P> <%= shop.price %>
+<% end %>
