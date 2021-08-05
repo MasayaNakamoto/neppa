@@ -1,2 +1,30 @@
-<h1>Admin::Shops#new</h1>
-<p>Find me in app/views/admin/shops/new.html.erb</p>
+<h1>店舗登録</h1>
+<table class="table table-borderless">
+<%= form_with model:@shop, :url => {:action => :create} do |f| %>
+  <tr>
+    <th><%#= f.label :商品画像 %></th>
+    <th><%#= f.attachment_field :image, class: "form-control-file" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :店舗名 %></th>
+    <th><%= f.text_field :name, placeholder: "店舗名", class: "form-control" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :店舗概要 %></th>
+    <th><%= f.text_area :introduction, placeholder: "ここに説明文を記述します", class: "form-control" %></th>
+  </tr>
+  <tr>
+    <th><%#= f.label :ジャンル %></th>
+    <th><%#= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "--選択してください--", class: "form-control" %></th>
+  </tr>
+  <tr>
+    <th><%= f.label :利用価格（税抜） %></th>
+    <th><%= f.text_field :price, placeholder: "1000", class: "form-control" %>円</th>
+  </tr>
+  <tr>
+    <th><%= f.label :郵便番号 %></th>
+    <th><%= f.text_field :postal_code, placeholder: "1234567", class: "form-control"  %></th>
+  <%= f.submit '新規登録', class: "btn btn-success" %>
+<% end %>
+  </tr>
+</table>

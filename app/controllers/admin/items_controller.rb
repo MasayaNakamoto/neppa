@@ -8,7 +8,7 @@ class Admin::ItemsController < ApplicationController
  def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_items_path
+      redirect_to admin_items_index_path
       flash[:success] = "商品登録完了"
     else
       render :new
@@ -36,4 +36,11 @@ class Admin::ItemsController < ApplicationController
     redirect_to admin_item_path(item)
  end
 
+ private
+
+  def item_params
+    params.require(:item).permit(:name, :introduction, :image, :is_active, :price, :image_id, :genre_id)
+  end
+
 end
+

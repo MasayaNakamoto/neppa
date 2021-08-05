@@ -25,11 +25,13 @@ Rails.application.routes.draw do
     get 'shops/index'
     get 'shops/new'
     get 'shops/show'
+    post 'shops/create'
   end
   namespace :admin do
     get 'items/index'
     get 'items/new'
     get 'items/show'
+    post 'items/create'
   end
   get 'shops/index'
   get 'shops/show'

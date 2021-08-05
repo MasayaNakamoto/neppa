@@ -35,4 +35,10 @@ class Admin::ShopsController < ApplicationController
     redirect_to admin_shop_path(item)
  end
 
+ private
+
+  def item_params
+    params.require(:shop).permit(:name, :introduction, :image, :postal_code, :address, :phone_number, :homepage, :price, :sauna, :image_id, :genre_id)
+  end
+
 end
