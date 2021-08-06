@@ -4,7 +4,7 @@
 <table class="table table-borderless">
 <%= form_with model:@item, :url => {:action => :create} do |f| %>
   <tr>
-    <th><%#= f.label :商品画像 %></th>
+    <th><%= f.label :商品画像 %></th>
     <th><%#= f.attachment_field :image, class: "form-control-file" %></th>
   </tr>
   <tr>
