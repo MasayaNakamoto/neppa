@@ -18,6 +18,7 @@ root to: 'homes#top'
 get 'homes/about'  => 'homes#about'
 
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+  resources :items, only: [:index, :show]
 
   namespace :admin do
     root to: "homes#top"
@@ -43,8 +44,6 @@ get 'homes/about'  => 'homes#about'
   get 'customers/show'
   get 'addresses/index'
   get 'cart_items/index'
-  get 'items/index'
-  get 'items/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

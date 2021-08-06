@@ -3,7 +3,7 @@
 <%= form_with model:@shop, :url => {:action => :create} do |f| %>
   <tr>
     <th><%= f.label :店舗画像 %></th>
-    <th><%#= f.attachment_field :image, class: "form-control-file" %></th>
+    <th><%= f.attachment_field :image, class: "form-control-file" %></th>
   </tr>
   <tr>
     <th><%= f.label :店舗名 %></th>
