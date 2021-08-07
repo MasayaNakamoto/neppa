@@ -1,4 +1,6 @@
 class CartItemsController < ApplicationController
+  before_action :authenticate_customer!
+
   def index
     @customer = Customer.find(current_customer.id)
     @cart_item = CartItem.where(customer_id: current_customer.id)
@@ -10,7 +12,6 @@ class CartItemsController < ApplicationController
     if @cart_item.save
       redirect_to cart_items_path
     else
-      # session[:cart_item] = @cart_item.attributes.slice(*cart_item_params.keys)
       redirect_to items_path
     end
   end
