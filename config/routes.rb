@@ -19,6 +19,7 @@ get 'homes/about'  => 'homes#about'
 
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   resources :items, only: [:index, :show]
+  resources :shops, only: [:index, :show]
 
   namespace :admin do
     root to: "homes#top"
@@ -33,9 +34,6 @@ get 'homes/about'  => 'homes#about'
   end
 
 
-
-  get 'shops/index'
-  get 'shops/show'
   get 'orders/new'
   get 'orders/confirm'
   get 'orders/complete'

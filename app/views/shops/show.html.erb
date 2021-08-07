@@ -1,2 +1,14 @@
-<h1>Shops#show</h1>
-<p>Find me in app/views/shops/show.html.erb</p>
+<%= attachment_image_tag @item, :image, width: '100%', height: 'auto', class: "rounded" %>
+      </div>
+      <div class="col-md-5 pt-4">
+        <p><strong><%= @shop.name %></strong></p>
+        <p><%= @shop.introduction %></p>
+        <p>￥<%= @shop.price %>  </p>
+          <%#= form_with model: @cart_item ,url: cart_items_path, method: :post, local: true do |f| %>
+            <%#= f.hidden_field :item_id, value: @item.id %>
+            <%#= f.select :amount, [[1], [2], [3], [4],[5]], include_blank: "個数選択", class: "form-control"  %>
+            <%#= f.submit "カートに入れる",class:"btn btn-success" %>
+          <%# end %>
+      </div>
+    </div>
+</div>
