@@ -20,6 +20,13 @@ get 'homes/about'  => 'homes#about'
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   resources :items, only: [:index, :show]
   resources :shops, only: [:index, :show]
+  resources :cart_items, only: [:index, :create, :destroy, :update] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
+  resources :orders, only: [:index, :create, :destroy, :update, :new, :show]
+
 
   namespace :admin do
     root to: "homes#top"
@@ -34,14 +41,10 @@ get 'homes/about'  => 'homes#about'
   end
 
 
-  get 'orders/new'
   get 'orders/confirm'
   get 'orders/complete'
-  get 'orders/index'
-  get 'orders/show'
   get 'customers/show'
   get 'addresses/index'
-  get 'cart_items/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

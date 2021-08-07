@@ -1,1 +1,11 @@
 <h1>商品カート</h1>
+<% @sum = 0 %>
+<% @cart_item.each do |cart_item| %>
+  <%= cart_item.item.name %>
+  <%= cart_item.item.price %>
+  <%= form_with model: cart_item, url: cart_item_path(cart_item), method: :patch, local: true do |f| %>
+   <%= f.select :amount, [[1], [2], [3], [4],[5]] %>
+   <%= f.submit '変更',class:"btn btn-success btn-sm" %>
+  <% end %>
+  <% @sum += cart_item.item.price * cart_item.amount %>
+<% end %>
