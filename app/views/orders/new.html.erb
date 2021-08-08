@@ -1,2 +1,55 @@
 <h1>注文情報入力</h1>
-<p>ここにカート商品の情報も改めて出してあげたい。それプラス支払い方法と配送先の登録をする</p>
+<p>メモ：ここにカート商品の情報も改めて出してあげたい。＋支払い方法と配送先登録</p>
+
+<h5>配送先選択</h5>
+<h6>※『配送先登録』で登録した配送先を選択または新たに配送先の入力をお願いいたします</h6>
+<%= form_with model: @order ,url: orders_confirm_path, method: :post, local: true do |f| %>
+<%#= f.radio_button :address_option, 1 %>
+<%#= f.label :address, "登録済住所から選択" %><br>
+ <div class="form-group row ml-4">
+  <%#= f.collection_select :id, current_customer.addresses, :id, :order_address, class: "form-control" %>
+ </div>
+
+ <%= f.radio_button :address_option, 2 %>
+ <%= f.label :address, "お届け先入力" %>
+  <br>
+  <div class="form-group row ml-2">
+   <%= f.label :post_code, "郵便番号", class: "col-sm-4 co-form-lavel" %>
+   <div class="col-sm-4">
+    <%= f.text_field :post_code, placeholder: "1234567", class: "form-control" %>
+   </div>
+  </div>
+
+  <div class="form-group row ml-2">
+   <%= f.label :address, "住所", class: "col-sm-4 col-form-lavel" %>
+   <div class="col-sm-8">
+    <%= f.text_field :address, placeholder: "京都府京都市XX区XX町0-0", class: "form-control" %>
+   </div>
+  </div>
+
+  <div class="form-group row ml-2">
+   <%= f.label :name, "名前", class: "col-sm-4 col-form-lavel" %>
+   <div class="col-sm-4">
+    <%= f.text_field :name, placeholder: "下谷熱波", class: "form-control" %>
+   </div>
+  </div>
+
+
+
+<h5>支払い方法選択</h5>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <%= f.radio_button :payment_method, "クレジットカード" %>
+      <%= f.label :payment_method, "クレジットカード" %>
+    </div>
+    <div class="col-sm-10">
+     <%= f.radio_button :payment_method, "銀行振込" %>
+      <%= f.label :payment_method, "銀行振込" %>
+    </div>
+  </div>
+  <div class="mx-auto mb-5">
+   <%= f.submit "注文確認画面へ",class:"btn btn-success" %>
+  </div>
+
+
+<% end %>
