@@ -26,6 +26,7 @@ get 'homes/about'  => 'homes#about'
     end
   end
   resources :orders, only: [:index, :create, :destroy, :update, :new, :show]
+  resources :addresses, only: [:index, :edit, :create, :update, :destroy]
 
 
   namespace :admin do
@@ -44,7 +45,6 @@ get 'homes/about'  => 'homes#about'
   get 'orders/confirm'
   get 'orders/complete'
   get 'customers/show'
-  get 'addresses/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
