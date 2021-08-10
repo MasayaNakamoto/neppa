@@ -1,0 +1,18 @@
+<%= form_with model:address, local:true do |f| %>
+    <div class="row">
+      <div class="col-3">郵便番号(ハイフンなし)</div>
+      <div class="form-group col-4"><%= f.text_field :postal_code, autofocus: true, placeholder: "1234567",class: "form-control" %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">住所</div>
+      <div class="form-group col-8"><%= f.text_field :address, autofocus: true, placeholder: "京都府京都市XX区XX町",class: "form-control" %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">名前</div>
+      <div class="form-group col-4"><%= f.text_field :name, autofocus: true, placeholder: "熱波好子",class: "form-control" %></div>
+    </div>
+
+    <div class="offset-md-10"><%= f.submit '配送先登録',class: "btn btn-success" %></div>
+<% end %>

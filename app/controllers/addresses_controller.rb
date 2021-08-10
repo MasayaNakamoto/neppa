@@ -18,17 +18,29 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    @address = Address.find(params[:id])
+    @customer = Customer.find(current_customer.id)
   end
 
   def update
+    @address = Address.find(params[:id])
+    if @address.update(address_params)
+      redirect_to addresses_path(@address),notice: "You have changed receiver's address successfully."
+    else
+      @customer = Customer.find(current_customer.id)
+      render 'edit'
+    end
   end
 
   def destroy
+    @address = Address.find(params[:id])
+    @address.destroy
+    redirect_to addresses_path
   end
 
    private
   def address_params
-    params.require(:address).permit(:post_code, :address, :name)
+    params.require(:address).permit(:postal_code, :address, :name)
   end
 
 
