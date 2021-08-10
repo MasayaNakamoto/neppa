@@ -27,7 +27,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    # @cart_item.customer_id = current_customer.id
     @order.save
     redirect_to orders_complete_path
     @cart_items = current_customer.cart_items.all
