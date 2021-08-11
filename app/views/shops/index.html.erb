@@ -9,8 +9,8 @@
          <th width="25%">店舗名</th>
          <th width="15%">エリア</th>
          <th width="15%">利用料金</th>
-         <th width="15%">いいね件数</th>
-         <th width="15%">コメント件数</th>
+         <th width="15%">nice sauna</th>
+         <th width="15%">コメント</th>
          <th width="15%"></th>
         </tr>
        </thead>
@@ -23,7 +23,7 @@
       <% end %> </td>
       <td></td>
       <td><%= shop.price %></td>
-      <td></td>
+      <td><%= link_to "❤︎#{shop.favorites.count} ", shop_path(shop.id) %></td>
       <td><%= link_to "#{shop.comments.count} 件", shop_path(shop.id) %></td>
       <td></td>
      </tr>
