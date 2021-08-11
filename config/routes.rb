@@ -19,7 +19,11 @@ get 'homes/about'  => 'homes#about'
 
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   resources :items, only: [:index, :show]
-  resources :shops, only: [:index, :show]
+  resources :shops, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
+  end
+
   resources :cart_items, only: [:index, :create, :destroy, :update] do
     collection do
       delete 'destroy_all'

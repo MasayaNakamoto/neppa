@@ -24,6 +24,7 @@
       <td></td>
       <td><%= shop.price %></td>
       <td></td>
+      <td><%= link_to "#{shop.comments.count} 件", shop_path(shop.id) %></td>
       <td></td>
      </tr>
      <% end %>

@@ -7,5 +7,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @genres = Genre.all
+    @comment = Comment.new
   end
 end

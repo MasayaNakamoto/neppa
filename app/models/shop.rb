@@ -7,4 +7,8 @@ class Shop < ApplicationRecord
     favorites.where(customer_id: customer.id).exists?
   end
 
+def shop_address
+    self.postal_code.to_s + self.address
+end
+
 end
