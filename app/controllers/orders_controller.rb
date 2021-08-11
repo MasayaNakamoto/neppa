@@ -28,7 +28,6 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.save
-    redirect_to orders_complete_path
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
       OrderDetail.create(
@@ -38,6 +37,7 @@ class OrdersController < ApplicationController
         price: cart_item.item.add_tax_price
       )
       current_customer.cart_items.destroy_all
+      redirect_to orders_complete_path
     end
   end
 
@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
     @orders = current_customer.orders.page(params[:page]).reverse_order.order("id DESC")
     @order = Order.find(params[:id])
     @customer = Customer.find(current_customer.id)
-    @order.shipping_cost = 800
+    @order.shipping_cost = 500
     @order_details = @order.order_details
   end
 

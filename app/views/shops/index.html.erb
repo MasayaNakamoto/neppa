@@ -1,17 +1,32 @@
-店舗一覧
 
-<%= attachment_image_tag @item, :image, width: '100%', height: 'auto', class: "rounded" %>
-      </div>
-      <% @shops.each do |shop| %>
-      <div class="col-md-5 pt-4">
-        <p><%= shop.name %></p>
-        <p><%= shop.introduction %></p>
-        <p>￥<%= shop.price %>  </p>
-          <%#= form_with model: @cart_item ,url: cart_items_path, method: :post, local: true do |f| %>
-            <%#= f.hidden_field :item_id, value: @item.id %>
-            <%#= f.select :amount, [[1], [2], [3], [4],[5]], include_blank: "個数選択", class: "form-control"  %>
-            <%#= f.submit "カートに入れる",class:"btn btn-success" %>
-          <% end %>
-      </div>
+<div class="container">
+   <h3 class="pt-3 ml-5"><span style="background-color:#EEEEEE">店舗一覧</span></h3>
+    <div class="row">
+     <div class="col-md-12 mx-auto">
+      <table class="table table-bordered width=100%">
+       <thead class="thead-light">
+        <tr>
+         <th width="25%">店舗名</th>
+         <th width="15%">エリア</th>
+         <th width="15%">利用料金</th>
+         <th width="15%">いいね件数</th>
+         <th width="15%">コメント件数</th>
+         <th width="15%"></th>
+        </tr>
+       </thead>
+     </div>
+     <% @shops.each do |shop| %>
+     <tr>
+      <td><%= attachment_image_tag shop, :image, width: '35%', height: 'auto' %>
+      <%= link_to shop_path(shop.id) do %>
+       <%= shop.name %>
+      <% end %> </td>
+      <td></td>
+      <td><%= shop.price %></td>
+      <td></td>
+      <td></td>
+     </tr>
+     <% end %>
+      </table>
     </div>
 </div>
