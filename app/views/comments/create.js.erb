@@ -1,0 +1,2 @@
+$('#comments_<%= @shop.id %>').html("<%= j(render partial: 'comments/comment', locals: {shop: @shop, customer: current_customer }) %>");
+$("textarea").val('')
