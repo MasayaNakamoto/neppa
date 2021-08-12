@@ -2,6 +2,7 @@ class Shop < ApplicationRecord
   attachment :image
   has_many :comments,dependent: :destroy
   has_many :favorites,dependent: :destroy
+  has_many :favorited_customers, through: :favorites, source: :customer
   belongs_to :genre
 
   def favorited_by?(customer)
