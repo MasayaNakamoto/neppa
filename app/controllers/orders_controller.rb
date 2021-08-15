@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def new
     @customer = Customer.find(current_customer.id)
     @order = Order.new
+    @cart_items = current_customer.cart_items
   end
 
   def confirm
