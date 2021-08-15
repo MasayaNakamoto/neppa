@@ -37,6 +37,8 @@ get 'about'  => 'homes#about'
   resources :addresses, only: [:index, :edit, :create, :update, :destroy]
 
   get 'customer' => 'customers#show'
+  get 'customer/edit' => 'customers#edit'
+  patch 'customer/' => 'customers#update', as: 'update_customer'
 
 
   namespace :admin do
