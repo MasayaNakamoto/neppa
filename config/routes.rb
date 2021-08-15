@@ -39,6 +39,9 @@ get 'about'  => 'homes#about'
   get 'customer' => 'customers#show'
   get 'customer/edit' => 'customers#edit'
   patch 'customer/' => 'customers#update', as: 'update_customer'
+  get 'customer/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+  patch 'customer/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+  put 'customer/withdraw' => 'customers#withdraw'
 
 
   namespace :admin do
