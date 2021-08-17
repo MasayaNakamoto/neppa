@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_customer!,except: [:index]
   def index
     @items = Item.order(id: :desc).page(params[:page]).reverse_order
     if customer_signed_in?

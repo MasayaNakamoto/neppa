@@ -4,7 +4,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="login_comment">
     neppa会員はこちらからログインをお願いいたします
-  </div></br>
+  </div>
+<div class="kochira">
+  会員登録は⇨
+<%= link_to "新規登録", new_customer_registration_path,class: "btn btn-success" %>
+</div>
+  </br>
 
   <div class="row">
     <div class="col-3">メールアドレス</div>
