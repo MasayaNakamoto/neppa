@@ -1,0 +1,21 @@
+<div class="container pb-5 mb-5">
+  <%= form_for(@contact, url: confirm_path) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, 'お名前*【必須】' %>
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, 'メールアドレス*【必須】' %>
+      <%= f.text_field :email, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :message, 'メッセージ*【必須】' %>
+      <%= f.text_area :message, size: '10x10', class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= f.submit '入力内容確認' %>
+    </div>
+  <% end %>
+</div>

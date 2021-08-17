@@ -56,6 +56,11 @@ get 'about'  => 'homes#about'
     post 'order_details/:id' => 'orders#show'
   end
 
+resources :contacts, only: [:new, :create]
+post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+post 'contacts/back', to: 'contacts#back', as: 'back'
+get 'done', to: 'contacts#done', as: 'done'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
