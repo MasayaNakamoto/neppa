@@ -1,2 +1,31 @@
-<h1>Admin::Shops#show</h1>
-<p>Find me in app/views/admin/shops/show.html.erb</p>
+<div class="container">
+  <h3 class="pt-3"><span style="background-color:#EEEEEE">店舗詳細</span></h3>
+    <div class="row md-4">
+      <div class="col-md-4 pt-3">
+        <%= attachment_image_tag @item, :image, width: '90%', height: 'auto' %>
+      </div>
+      <div class="col-md-8 pt-3">
+        <table class="table table-borderless">
+          <tr>
+            <th>店舗名</th>
+            <th><%= @shop.name %></th>
+          </tr>
+          <tr>
+            <th>店舗説明</th>
+            <th><%= @shop.introduction %></th>
+          </tr>
+          <tr>
+            <th>税込価格(税抜価格)</th>
+            <th><%= @shop.price %> 円</th>
+          </tr>
+          <tr>
+            <th>サウナ</th>
+            <th><%= @shop.sauna %> </th>
+          </tr>
+        </table>
+        <p>
+          <%= link_to "編集する", edit_admin_shop_path(@shop), class: "btn btn-success" %>
+        </p>
+      </div>
+  </div>
+</div>

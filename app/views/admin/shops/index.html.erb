@@ -1,8 +1,40 @@
-<h1>店舗一覧</h1>
-<% @shops.each do |shop| %>
-  <P>ID</P><%= shop.id %>
-  <P>NAME</P><%= shop.name %>
-  <P>TEXT</P><%= shop.introduction %>
-  <P>STATUS</P><%= shop.sauna %>
-  <P>PRICE</P> <%= shop.price %>
-<% end %>
+<dev class="container">
+  <div class="row">
+    <div class='mx-auto col-9 mb-4'>
+      <!--サクセスメッセージ-->
+      <% if flash[:success] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:success] %>
+        </div>
+      <% end %>
+      <h3><span style="background-color:#EEEEEE">店舗一覧</span></h3>
+        <div class="text-right pb-3">
+          <%= link_to '',new_admin_item_path,class: 'btn btn-outline-secondary fa-2x fas fa-plus' %>
+        </div>
+       <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>店舗ID</th>
+            <th>店舗名</th>
+            <th>価格</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @shops.each do |shop| %>
+          <tr>
+            <td><%= shop.id %></td>
+            <td>
+              <%= link_to admin_shop_path(shop.id) do %>
+                <%= shop.name %>
+              <% end %>
+            </td>
+            <!--価格表示を３桁区切りにしたいのでconverting_to_jpyを追記する件解決する-->
+            <td><%= shop.price %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= paginate @shops %>
+    </dev>
+  </div>
+</div>
