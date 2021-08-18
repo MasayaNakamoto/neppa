@@ -25,7 +25,7 @@ $(document).ready(function () {
     // スライドショーの変化 ("fade" or "slide")
     transition : 'slide',
     // 変化に係る時間(ミリ秒)
-    speed : 1000,
+    speed : 500,
     // easingの種類
     easing : 'easeOutQuart',
     // ナビゲーションの形("block" or "bubble")
