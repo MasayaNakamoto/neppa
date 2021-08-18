@@ -1,8 +1,8 @@
-<div class="container">
+<!--<div class="container">-->
   <h1>商品一覧</h1>
-   <div class="row pt-4 mb-5">
+   <div class="row">
      <% @items.each do |item| %>
-     <div class="card col-md-3 p-1 m-1" style="width: 18rem;">
+     <div class="card col-md-3 m-5" style="width: 18rem;">
        <%= link_to item_path(item.id) do %>
        <div>
         <%= attachment_image_tag item, :image, class: "card-img-top rounded" %>
@@ -12,6 +12,8 @@
          <p class="card-text">¥<%= converting_to_jpy(item.add_tax_price) %>(税込)</p>
         </div>
         <% end %>
-      </div>
-</div>
-  <% end %>
+     </div>
+     <% end %>
+  </div>
+
+<!--</div>-->

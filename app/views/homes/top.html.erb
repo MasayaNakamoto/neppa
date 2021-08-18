@@ -1,27 +1,56 @@
-<h1>neppa</h1>
-
-<p>サウナを愛する人にも、これからサウナに行ってみようという人にも
-<br>
-全てのサウナーに愛されるよう皆様に熱い想い、我々の熱波を届けられますように…
-</p>
-
-<%= link_to "neppaとは", about_path %>
-<%= link_to "商品一覧", items_path %>
-<%= link_to "店舗一覧", shops_path %>
 
 
+<!--<div class="container">-->
+<!-- <div class="theTarget">-->
+<!--   <div style="background-image: url(assets/images/sauna.jpg)"></div>-->
+<!--   <div style="background-image: url(assets/images/ohuro.jpg)"></div>-->
+<!--   <div style="background-image: url(assets/images/stone.jpg)"></div>-->
+<!-- </div>-->
+<!--</div>-->
+<!--<script src="javascripts/jquery.min.js"></script>-->
+<!--<script src="javascripts/skippr.min.js"></script>-->
+<!--<script src="javascripts/script.js"></script>-->
+
+<!--<p>サウナを愛する人にも、これからサウナに行ってみようという人にも-->
+<!--<br>-->
+<!--全てのサウナーに愛されるよう皆様に熱い想い、我々の熱波を届けられますように…-->
+<!--</p>-->
 
 
+<div class="row">
+  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+    <div>
+      <%= link_to  about_path do %>
+    　<%= image_tag 'logo.png', class: "card-img-top rounded" %>
+    </div>
+    <div class="card-body">
+      <p class="card-title">neppaって何？</p>
+      <% end %>
+      <p class="card-text">当サイトでどんなことが<br>利用できるかが記載されています</p>
+    </div>
+  </div>
 
-<% if customer_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_customer_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_customer_session_path %>
-      </li>
-<% end %>
+  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+    <div>
+      <%= link_to shops_path do %>
+    　<%= image_tag 'sauna.jpg', class: "card-img-top rounded" %>
+    </div>
+    <div class="card-body">
+      <p class="card-title">店舗一覧</p>
+      <% end %>
+      <p class="card-text">当サイトが自信を持ってオススメする<br>ナイスサウナなお店の一覧です</p>
+    </div>
+  </div>
+
+  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+    <div>
+      <%= link_to items_path do %>
+    　<%= image_tag 'ohuro.jpg', class: "card-img-top rounded" %>
+    </div>
+    <div class="card-body">
+      <p class="card-title">商品一覧</p>
+      <% end %>
+      <p class="card-text">これからサウナライフを<br>始める方にも安心な<br>サウナグッズ販売コーナー</p>
+    </div>
+  </div>
+</div>

@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
     end
-    @order.shipping_cost = 800
+    @order.shipping_cost = 500
   end
 
   def create
