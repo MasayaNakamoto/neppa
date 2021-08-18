@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.save
+    redirect_to complete_path(@order)
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
       OrderDetail.create(
@@ -38,7 +39,6 @@ class OrdersController < ApplicationController
         price: cart_item.item.add_tax_price
       )
       current_customer.cart_items.destroy_all
-      redirect_to orders_complete_path
     end
   end
 
