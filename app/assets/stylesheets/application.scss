@@ -18,9 +18,10 @@
  @import 'font-awesome';
 
 #box{
+  padding: 50px;
   margin : 0 auto;
   width: 1000px;
-  height: 400px;
+  height: 700px;
 }
 .image1 {
   background-image: url(sauna.jpg);
@@ -34,3 +35,8 @@
 .image4 {
   background-image: url(サウナイラスト.jpg);
 }
+
+#map{
+  height: 100%;
+}
+

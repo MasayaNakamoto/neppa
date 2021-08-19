@@ -63,3 +63,27 @@
   <%= f.submit "送信する" %>
 <% end %>
 </div>
+
+<div id="map" style="width:620px; height:400px"></div>
+    <!--<script>-->
+    <!--var map;-->
+    <!--function initMap() {-->
+    <!--map = new google.maps.Map(document.getElementById('map'), {-->
+    <!--    center: {lat: 35.661777, lng: 139.704051},-->
+    <!--    zoom: 8-->
+    <!--});-->
+    <!--}-->
+    <!--</script>-->
+
+    <script type="text/javascript">
+    function initMap() {
+      var opts = {
+        zoom: 15,
+        center: new google.maps.LatLng(35.709984,139.810703)
+      };
+      var map = new google.maps.Map(document.getElementById("map"), opts);
+    }
+    </script>
+
+<script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" >
+</script>
