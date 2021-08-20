@@ -1,14 +1,10 @@
 <!--<div class="container">-->
 <div id="splash">
-    <div id="splash_logo">
-      <img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/img/loading.svg" alt="" class="fadeUp">
-      <!--<img src="/images/logo.png" alt="" class="fadeUp">-->
-    </div>
+  <div id="splash_logo">
+   <img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/img/loading.svg" alt="" class="fadeUp">
+   <!--<img src="/images/logo.png" alt="" class="fadeUp">-->
+  </div>
 </div>
-
-  <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"-->
-  <!--  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
-  <!--<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/js/4-1-4.js"></script>-->
 
 <script>
   $(function(){
@@ -17,6 +13,36 @@
     }, 2500);
   });
 </script>
+
+
+
+
+<h1 class="title">
+  <span>n</span>
+  <span>e</span>
+  <span>p</span>
+  <span>p</span>
+  <span>a</span>
+  <span class= "fas fa-wind"></span>
+</h1>
+
+<script>
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const $target = $(".title");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);
+</script>
+
+
+  <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"-->
+  <!--  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+  <!--<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/js/4-1-4.js"></script>-->
 
 <div id="box">
   <div id="images">
