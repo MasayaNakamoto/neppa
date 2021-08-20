@@ -36,7 +36,115 @@
   background-image: url(サウナイラスト.jpg);
 }
 
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
 #map{
   height: 100%;
 }
 
+.main-visual-content {
+  width: 100%; /* 横幅40% */
+  height: 100%; /* 親の高さに揃える */
+  background-color: rgba(0, 0, 0, 0.5); /* 背景色を半透明の黒にする */
+  text-align: center; /* 文字を中央揃えにする */
+  padding-top: 105px; /* 上側の内側余白で垂直方向の位置を調整 */
+  margin: 0 auto;
+}
+
+.main-visual-text {
+  color: #fff; /* 文字色を白に変更 */
+  text-align: center;
+  font-size: 30px;
+}
+
+header, h1, nav {
+font-family: 'Caveat', cursive;
+}
+nav {
+  font-size: 5px;
+}
+
+body{
+  background-color: #ffebcd;
+}
+
+.sa {
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.sa--lr {
+  transform: translate(-100px, 0);
+}
+
+.sa--rl {
+  transform: translate(100px, 0);
+}
+
+.sa--up {
+  transform: translate(0, 100px);
+}
+
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background:#333;
+  text-align:center;
+  color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo img {
+  width:260px;
+}
+
+/* fadeUpをするアイコンの動き */
+
+.fadeUp{
+animation-name: fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}

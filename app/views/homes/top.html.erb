@@ -1,4 +1,15 @@
 <!--<div class="container">-->
+<div id="splash">
+    <div id="splash_logo">
+      <!--<img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/img/loading.svg" alt="" class="fadeUp">-->
+      <img src="/images/logo.png" alt="" class="fadeUp">
+    </div>
+</div>
+
+  <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"-->
+  <!--  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
+  <!--<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/js/4-1-4.js"></script>-->
+
 <script>
   $(function(){
     setTimeout(function(){
@@ -9,21 +20,52 @@
 
 <div id="box">
   <div id="images">
-    <div class="image1"></div>
-    <div class="image2"></div>
-    <div class="image3"></div>
-    <div class="image4"></div>
+    <div class="image1">
+      <div class="main-visual-content">
+       <p class="main-visual-text">
+        サウナを愛する人にも、</br>
+        これからサウナに行ってみようという人にも</br>
+        全てのサウナーに愛されるよう皆様に熱い想い、</br>
+        我々の熱波を届けられますように</br>
+       </p>
+      </div>
+    </div>
+    <div class="image2">
+      <div class="main-visual-content">
+       <p class="main-visual-text">
+        サウナを愛する人にも、</br>
+        これからサウナに行ってみようという人にも</br>
+        全てのサウナーに愛されるよう皆様に熱い想い、</br>
+        我々の熱波を届けられますように</br>
+       </p>
+      </div>
+    </div>
+    <div class="image3">
+      <div class="main-visual-content">
+       <p class="main-visual-text">
+        サウナを愛する人にも、</br>
+        これからサウナに行ってみようという人にも</br>
+        全てのサウナーに愛されるよう皆様に熱い想い、</br>
+        我々の熱波を届けられますように</br>
+       </p>
+      </div>
+    </div>
+    <div class="image4">
+      <div class="main-visual-content">
+       <p class="main-visual-text">
+        サウナを愛する人にも、</br>
+        これからサウナに行ってみようという人にも</br>
+        全てのサウナーに愛されるよう皆様に熱い想い、</br>
+        我々の熱波を届けられますように</br>
+       </p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!--<p>サウナを愛する人にも、これからサウナに行ってみようという人にも-->
-<!--<br>-->
-<!--全てのサウナーに愛されるよう皆様に熱い想い、我々の熱波を届けられますように…-->
-<!--</p>-->
-
 
 <div class="row">
-  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+  <div class="card sa sa--lr col-md-3 p-2 m-5" style="width: 18rem;">
     <div>
       <%= link_to  about_path do %>
     　<%= image_tag 'logo.png', class: "card-img-top rounded" %>
@@ -35,7 +77,7 @@
     </div>
   </div>
 
-  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+  <div class="card sa sa--up col-md-3 p-2 m-5" style="width: 18rem;">
     <div>
       <%= link_to shops_path do %>
     　<%= image_tag 'sauna.jpg', class: "card-img-top rounded" %>
@@ -47,7 +89,7 @@
     </div>
   </div>
 
-  <div class="card col-md-3 p-2 m-5" style="width: 18rem;">
+  <div class="card sa sa--rl col-md-3 p-2 m-5" style="width: 18rem;">
     <div>
       <%= link_to items_path do %>
     　<%= image_tag 'ohuro.jpg', class: "card-img-top rounded" %>
@@ -59,4 +101,3 @@
     </div>
   </div>
 </div>
-
