@@ -3,7 +3,9 @@ class Item < ApplicationRecord
   has_many :cart_items
   has_many :order_details
 
+  validates :name, :price, presence: true
+
   def add_tax_price
-    (self.price * 1.1).round
+   (self.price * 1.1).round
   end
 end
