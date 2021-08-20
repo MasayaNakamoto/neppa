@@ -58,9 +58,9 @@
 </div>
 <div class="new-comment">
 <%= form_with(model:[@shop, @comment], local: true) do |f| %>
-  <%= f.text_field :title,placeholder: "タイトル" %>
-  <%= f.text_area :text, rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
-  <%= f.submit "送信する" %>
+  <div class = "pb-3"><%= f.text_field :title,placeholder: "タイトル" %></div>
+  <%= f.text_area :text, size: "50x10", rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
+  <div><%= f.submit "送信する" %></div>
 <% end %>
 </div>
 
