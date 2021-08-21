@@ -1,90 +1,92 @@
-<div class="col-md-11 mx-auto">
-  <h2 class="pt-3 ml-5"><span style="background-color:#EEEEEE"><%= @shop.name %></span></h3>
-  <%= attachment_image_tag @shop, :image, width: '70%', height: 'auto', class: "rounded" %>
+<div class="container">
+    <div class="col-md-11 mx-auto">
+      <h2 class="pt-3 ml-5"><span style="background-color:#EEEEEE"><%= @shop.name %></span></h3>
+      <%= attachment_image_tag @shop, :image, width: '70%', height: 'auto', class: "rounded" %>
 
-  <div id="favorites_buttons_<%= @shop.id %>">
-   <%= render partial: 'favorites/favorite',locals: { shop: @shop} %>
-  </div>
-
-        </div>
-        <h4>店舗説明</h4>
-          <p><%= @shop.introduction %></p>
-        <h4>サウナ情報</h4>
-          <p><%= @shop.sauna%></p>
-
-
-        </div>
+      <div id="favorites_buttons_<%= @shop.id %>">
+       <%= render partial: 'favorites/favorite',locals: { shop: @shop} %>
       </div>
-  </div>
-  <table class="table table-bordered">
-       <tr>
-        <th>アクセス</th>
-        <th>
-         <p>〒<%= @shop.postal_code %></p>
-         <%= @shop.address %>
-        </th>
-       </tr>
-       <tr>
-        <th>電話番号</th>
-        <th>
-         <p><%= @shop.phone_number %></p>
-        </th>
-       </tr>
-       <tr>
-        <th>利用金額</th>
-        <th>
-         <p>￥<%= @shop.price %></p>
-        </th>
-       </tr>
-       <tr>
-        <th>HP</th>
-        <th>
-         <p><%= @shop.homepage %></p>
-        </th>
-       </tr>
-      </table>
-</div>
 
-<div class="comments">
-<p>コメント件数：<%= @shop.comments.count %></p>
-<% @shop.comments.each do |comment| %>
-  <%= comment.created_at.strftime('%Y/%m/%d') %><br><p>タイトル： <%= comment.title %></p><br><%= comment.text %>
-  <% if comment.customer == current_customer %>
-  <div class="comment-delete">
-    <%= link_to "削除", shop_comment_path(comment.shop, comment), method: :delete %>
-  </div>
-  <%end %>
-<% end %>
-</div>
-<div class="new-comment">
-<%= form_with(model:[@shop, @comment], local: true) do |f| %>
-  <div class = "pb-3"><%= f.text_field :title,placeholder: "タイトル" %></div>
-  <%= f.text_area :text, size: "50x10", rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
-  <div><%= f.submit "送信する" %></div>
-<% end %>
-</div>
+            </div>
+            <h4>店舗説明</h4>
+              <p><%= @shop.introduction %></p>
+            <h4>サウナ情報</h4>
+              <p><%= @shop.sauna%></p>
 
-<div id="map" style="width:620px; height:400px"></div>
-    <!--<script>-->
-    <!--var map;-->
-    <!--function initMap() {-->
-    <!--map = new google.maps.Map(document.getElementById('map'), {-->
-    <!--    center: {lat: 35.661777, lng: 139.704051},-->
-    <!--    zoom: 8-->
-    <!--});-->
-    <!--}-->
-    <!--</script>-->
 
-    <script type="text/javascript">
-    function initMap() {
-      var maps = document.getElementById("map");
-      var opts = {
-        zoom: 15,
-        center: new google.maps.LatLng(35.709984,139.810703)
-      };
-      var map = new google.maps.Map(maps, opts);
-    }
+            </div>
+          </div>
+      </div>
+      <table class="table table-bordered">
+           <tr>
+            <th>アクセス</th>
+            <th>
+             <p>〒<%= @shop.postal_code %></p>
+             <%= @shop.address %>
+            </th>
+           </tr>
+           <tr>
+            <th>電話番号</th>
+            <th>
+             <p><%= @shop.phone_number %></p>
+            </th>
+           </tr>
+           <tr>
+            <th>利用金額</th>
+            <th>
+             <p>￥<%= @shop.price %></p>
+            </th>
+           </tr>
+           <tr>
+            <th>HP</th>
+            <th>
+             <p><%= @shop.homepage %></p>
+            </th>
+           </tr>
+          </table>
+    </div>
+
+    <div class="comments">
+    <p>コメント件数：<%= @shop.comments.count %></p>
+    <% @shop.comments.each do |comment| %>
+      <%= comment.created_at.strftime('%Y/%m/%d') %><br><p>タイトル： <%= comment.title %></p><br><%= comment.text %>
+      <% if comment.customer == current_customer %>
+      <div class="comment-delete">
+        <%= link_to "削除", shop_comment_path(comment.shop, comment), method: :delete %>
+      </div>
+      <%end %>
+    <% end %>
+    </div>
+    <div class="new-comment">
+    <%= form_with(model:[@shop, @comment], local: true) do |f| %>
+      <div class = "pb-3"><%= f.text_field :title,placeholder: "タイトル" %></div>
+      <%= f.text_area :text, size: "50x10", rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
+      <div><%= f.submit "送信する" %></div>
+    <% end %>
+    </div>
+
+    <div id="map" style="width:620px; height:400px"></div>
+</div>
+        <!--<script>-->
+        <!--var map;-->
+        <!--function initMap() {-->
+        <!--map = new google.maps.Map(document.getElementById('map'), {-->
+        <!--    center: {lat: 35.661777, lng: 139.704051},-->
+        <!--    zoom: 8-->
+        <!--});-->
+        <!--}-->
+        <!--</script>-->
+
+        <script type="text/javascript">
+        function initMap() {
+          var maps = document.getElementById("map");
+          var opts = {
+            zoom: 15,
+            center: new google.maps.LatLng(35.709984,139.810703)
+          };
+          var map = new google.maps.Map(maps, opts);
+        }
+        </script>
+
+    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" >
     </script>
-
-<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" >
-</script>

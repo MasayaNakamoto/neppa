@@ -2,7 +2,7 @@
   <h3 class="pt-3"><span style="background-color:#EEEEEE">店舗詳細</span></h3>
     <div class="row md-4">
       <div class="col-md-4 pt-3">
-        <%= attachment_image_tag @item, :image, width: '90%', height: 'auto' %>
+        <%= attachment_image_tag @shop, :image, width: '100%', height: 'auto' %>
       </div>
       <div class="col-md-8 pt-3">
         <table class="table table-borderless">
@@ -15,12 +15,28 @@
             <th><%= @shop.introduction %></th>
           </tr>
           <tr>
+            <th>サウナ情報</th>
+            <th><%= @shop.sauna %></th>
+          </tr>
+          <tr>
+            <th>郵便番号</th>
+            <th><%= @shop.postal_code %></th>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <th><%= @shop.address %></th>
+          </tr>
+          <tr>
             <th>税込価格(税抜価格)</th>
             <th><%= @shop.price %> 円</th>
           </tr>
           <tr>
-            <th>サウナ</th>
-            <th><%= @shop.sauna %> </th>
+            <th>電話番号</th>
+            <th><%= @shop.phone_number %> </th>
+          </tr>
+          <tr>
+            <th>HP</th>
+            <th><%= @shop.homepage %> </th>
           </tr>
         </table>
         <p>
