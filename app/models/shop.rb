@@ -13,4 +13,8 @@ def shop_address
     self.postal_code.to_s + self.address
 end
 
+def self.search(keyword)
+  where(["name like? OR address like?", "%#{keyword}%", "%#{keyword}%"])
+end
+
 end

@@ -13,4 +13,10 @@ class ShopsController < ApplicationController
     @genres = Genre.all
     @comment = Comment.new
   end
+
+  def search
+  @shops = Shop.search(params[:keyword])
+  @keyword = params[:keyword]
+  render "index"
+  end
 end
