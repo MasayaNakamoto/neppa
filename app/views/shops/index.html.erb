@@ -1,12 +1,13 @@
-<div class="search-form">
+<div class="container">
+ <div class="row">
+  <h3 class="pt-3 ml-5"><span style="background-color:#EEEEEE">店舗一覧</span></h3>
+  <div class="search-form pt-3 ml-5">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
     <%= f.text_field :keyword, value: @keyword, placeholder: "店舗名または都道府県" %>
     <%= f.submit "検索" %>
   <% end %>
-</div>
-
-<div class="container">
-  <h3 class="pt-3 ml-5"><span style="background-color:#EEEEEE">店舗一覧</span></h3>
+  </div>
+ </div>
     <div class="row row pt-4 mb-5">
      <div class="col-2">
       <table class = "wf-hannari table table-bordered">
@@ -15,7 +16,10 @@
         </tr>
         <% @genres.each do |genre| %>
         <tr>
-          <td><%= genre.name %></td>
+          <td>
+          <%= link_to genre.name, shops_path(genre: genre.id) %>
+          <span class="badge badge-primary badge-pill"><%= genre.shops.count %></span>
+          </td>
         </tr>
         <% end %>
       </table>
