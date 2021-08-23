@@ -96,6 +96,7 @@
   margin-bottom: 0;
   color: #444444;
   z-index: 101;
+  // z-indexとはボックスの重なり順序を指定するプロパティ
 }
 
 .main-visual-text {
@@ -161,7 +162,7 @@ body{
 /* Loading アイコンの大きさ設定　*/
 #splash_logo img {
   width: 100vw;
-  height: 55vw;
+  height: 65vw;
 }
 
 /* fadeUpをするアイコンの動き */

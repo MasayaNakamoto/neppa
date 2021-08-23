@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
     if params[:genre].present?
     @shops = Shop.where(genre_id: params[:genre])
     end
-    # 上のやつはジャンル名表示に困ってて残してる現状
+  # presentメソッドはオブジェクトであるレシーバーの値が存在すればtrue、存在しなければfalseを返すメソッド
   end
 
   def show
