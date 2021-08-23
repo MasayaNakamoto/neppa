@@ -1,30 +1,28 @@
 <div class="container">
-    <div class="col-md-11 mx-auto">
-      <h2 class="pt-3 ml-5"><span style="background-color:#EEEEEE"><%= @shop.name %></span></h3>
-      <%= attachment_image_tag @shop, :image, width: '70%', height: 'auto', class: "rounded" %>
+<h2 class="pt-3 ml-5"><span style="background-color:#EEEEEE"><%= @shop.name %></span></h3>
 
-      <div id="favorites_buttons_<%= @shop.id %>">
-       <%= render partial: 'favorites/favorite',locals: { shop: @shop} %>
-      </div>
-
-            </div>
-            <h4>店舗説明</h4>
-              <p><%= @shop.introduction %></p>
-            <h4>サウナ情報</h4>
-              <p><%= @shop.sauna%></p>
-
-
-            </div>
-          </div>
-      </div>
-      <table class="table table-bordered">
-           <tr>
-            <th>アクセス</th>
-            <th>
-             <p>〒<%= @shop.postal_code %></p>
-             <%= @shop.address %>
-            </th>
-           </tr>
+<div class="row pt-4 mb-5">
+ <div class="col-md-6 pt-4">
+   <%= attachment_image_tag @shop, :image, width: '90%', height: 'auto', class: "rounded" %>
+   <div id="favorites_buttons_<%= @shop.id %>">
+    <%= render partial: 'favorites/favorite',locals: { shop: @shop} %>
+   </div>
+ </div>
+ <div class="col-md-6 pt-4">
+   <h4>店舗説明</h4>
+   <p><%= @shop.introduction %></p>
+   <h4>サウナ情報</h4>
+   <p><%= @shop.sauna%></p>
+ </div>
+</div>
+  <table class="table table-bordered">
+   <tr>
+     <th>アクセス</th>
+     <th>
+     <p>〒<%= @shop.postal_code %></p>
+     <%= @shop.address %>
+     </th>
+    </tr>
            <tr>
             <th>電話番号</th>
             <th>
@@ -46,26 +44,31 @@
           </table>
     </div>
 
-    <div class="comments">
-    <p>コメント件数：<%= @shop.comments.count %></p>
-    <% @shop.comments.each do |comment| %>
-      <%= comment.created_at.strftime('%Y/%m/%d') %><br><p>タイトル： <%= comment.title %></p><br><%= comment.text %>
-      <% if comment.customer == current_customer %>
-      <div class="comment-delete">
-        <%= link_to "削除", shop_comment_path(comment.shop, comment), method: :delete %>
-      </div>
-      <%end %>
-    <% end %>
-    </div>
-    <div class="new-comment">
-    <%= form_with(model:[@shop, @comment], local: true) do |f| %>
+   <div class="row pt-4 mb-5">
+    <div class="col-md-6 pt-4">
+     <div class="new-comment">
+      <%= form_with(model:[@shop, @comment], local: true) do |f| %>
       <div class = "pb-3"><%= f.text_field :title,placeholder: "タイトル" %></div>
-      <%= f.text_area :text, size: "50x10", rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
+       <%= f.text_area :text, size: "50x10", rows:'10',placeholder: "ユーザーの皆さんのリアルな声をここに！！" %>
       <div><%= f.submit "送信する" %></div>
-    <% end %>
-    </div>
+      <% end %>
+     </div>
+   </div>
+    <div class="col-md-6 pt-4">
+     <div class="comments">
+      <p>コメント件数：<%= @shop.comments.count %></p>
+     <% @shop.comments.each do |comment| %>
+      <%= comment.created_at.strftime('%Y/%m/%d') %><br><p>タイトル： <%= comment.title %></p><%= comment.text %>
+      <% if comment.customer == current_customer %>
+       <div class="comment-delete">
+        <%= link_to "削除", shop_comment_path(comment.shop, comment), method: :delete %><br>
+       </div>
+      <%end %>
+     <% end %>
+     </div>
+   </div>
 
-    <div id="map" style="width:620px; height:400px"></div>
+    <div id="map" style="width:620px; height:400px;"></div>
 </div>
         <!--<script>-->
         <!--var map;-->
