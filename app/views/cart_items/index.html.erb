@@ -35,10 +35,21 @@
             <%= link_to "削除", cart_item_path(cart_item), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %>
           </td>
         </tr>
-          合計金額<%= @sum += cart_item.item.price * cart_item.amount %>
+          <% @sum += cart_item.item.price * cart_item.amount %>
         <% end %>
       </table>
   </div>
+  <div class="col-md-5 mt-8">
+    <table class="table table-bordered">
+     <tr>
+      <th>合計金額</th>
+      <th>
+       <%= converting_to_jpy(@sum) %>
+      </th>
+     </tr>
+    </table>
+   </div>
+ </div>
 
   <%= link_to "買い物続ける", items_path,class:"btn btn-primary" %>
   <%= link_to "情報入力を続ける", new_order_path,class:"btn btn-success" %>

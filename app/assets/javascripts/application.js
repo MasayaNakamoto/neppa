@@ -46,12 +46,7 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
 /*global $*/
-
-
-
-
 
 //logoの表示
 $(window).on('load',function(){

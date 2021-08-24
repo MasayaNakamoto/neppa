@@ -25,9 +25,19 @@
             </td>
             <td><%= converting_to_jpy(cart_item.item.add_tax_price * cart_item.amount) %></td>
           </tr>
-            合計金額<%= @sum += cart_item.item.price * cart_item.amount %>
+            <% @sum += cart_item.item.add_tax_price * cart_item.amount %>
           <% end %>
         </table>
+        <div class="col-md-5 mt-8">
+    <table class="table table-bordered">
+     <tr>
+      <th>合計金額</th>
+      <th>
+       <%= converting_to_jpy(@sum) %>
+      </th>
+     </tr>
+    </table>
+   </div>
     </div>
 
   <h4>配送先選択</h4>
