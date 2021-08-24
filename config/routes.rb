@@ -48,7 +48,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root to: "homes#top"
-      get '/index/:id' => 'homes#index'
+      get '/index/:id' => 'homes#top'
       resources :items, only: [:index, :new, :create, :show, :edit, :update]
       resources :shops, only: [:index, :new, :create, :show, :edit, :update]
       resources :genres, only: [:index, :create, :edit, :update]
