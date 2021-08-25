@@ -15,6 +15,7 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     @genres = Genre.all
     @comment = Comment.new
+    @comments = Comment.page(params[:page]).reverse_order.order("id DESC")
   end
 
   def search

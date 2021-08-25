@@ -106,15 +106,21 @@
   font-size: 35px;
 }
 
-header, h1, nav {
-font-family: 'Caveat', cursive;
+header, h1, p, h2, h3, h4, h5, h6, td, th, form, nav {
+font-family: 'arial unicode ms', 'Caveat', cursive;
 }
-nav {
-  font-size: 5px;
+.nav-link {
+  font-size: 20px;
 }
 
 body{
-  background-color: #ffebcd;
+  // background-color: #ffebcd;
+  background-image: url(back.png) ;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+td{
+  background-color: #ffffff;
 }
 
 .sa {

@@ -34,16 +34,16 @@
      <table class="table table-bordered">
       <thead>
        <tr>
-        <th>送料</th>
-        <th><%= converting_to_jpy(@order.shipping_cost) %></th>
+        <td>送料</td>
+        <td><%= converting_to_jpy(@order.shipping_cost) %></td>
        </tr>
        <tr>
-        <th>商品合計</th>
-        <th><%= converting_to_jpy(@sum) %></th>
+        <td>商品合計</td>
+        <td><%= converting_to_jpy(@sum) %></td>
        </tr>
        <tr>
-        <th>請求金額</th>
-        <th><%= converting_to_jpy(@order.shipping_cost + @sum) %></th>
+        <td>請求金額</td>
+        <td><%= converting_to_jpy(@order.shipping_cost + @sum) %></td>
        </tr>
       </thead>
      </table>
