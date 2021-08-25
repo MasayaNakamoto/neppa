@@ -52,4 +52,14 @@ $(document).on('turbolinks:load', function() {
 $(document).on('turbolinks:load', function() {
   $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
   $("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
+
+const CLASSNAME = "-visible";
+const TIMEOUT = 1500;
+const $target = $(".title")
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);
 });
