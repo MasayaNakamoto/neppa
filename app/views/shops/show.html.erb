@@ -69,28 +69,58 @@
      <%= paginate @comments %>
    </div>
 
-    <div id="map" style="width:620px; height:400px;"></div>
+    <!--<div id="map" style="width:620px; height:400px;"></div>-->
+    <div id="map"></div>
 </div>
-        <!--<script>-->
-        <!--var map;-->
-        <!--function initMap() {-->
-        <!--map = new google.maps.Map(document.getElementById('map'), {-->
-        <!--    center: {lat: 35.661777, lng: 139.704051},-->
-        <!--    zoom: 8-->
-        <!--});-->
-        <!--}-->
-        <!--</script>-->
 
-        <script type="text/javascript">
-        function initMap() {
-          var maps = document.getElementById("map");
-          var opts = {
-            zoom: 15,
-            center: new google.maps.LatLng(35.709984,139.810703)
-          };
-          var map = new google.maps.Map(maps, opts);
-        }
-        </script>
 
-    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" async defer >
-    </script>
+<script type="text/javascript">
+  function initMap() {
+// latitude,longitudeから位置を特定
+    var test ={lat: <%= @shop.latitude %>, lng: <%= @shop.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    var contentString = '住所：<%= @shop.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+ // Map上の指定した位置にピンを挿して表示する
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
+
+<style type="text/css">
+  #map { height: 200px;
+         width: 70%;}
+</style>
+
+
+<!--<script type="text/javascript">-->
+<!--        function initMap() {-->
+<!--          var maps = document.getElementById("map");-->
+<!--          var opts = {-->
+<!--            zoom: 15,-->
+<!--            center: new google.maps.LatLng(<%#= @shop.latitude %>, lng: <%#= @shop.longitude %>)-->
+<!--          };-->
+<!--          var map = new google.maps.Map(maps, opts);-->
+<!--        }-->
+<!--</script>-->
+
+<!--<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" async defer >-->
+<!--</script>-->

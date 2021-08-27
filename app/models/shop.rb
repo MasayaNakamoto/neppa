@@ -17,4 +17,7 @@ def self.search(keyword)
   where(["name like? OR address like?", "%#{keyword}%", "%#{keyword}%"])
 end
 
+geocoded_by :address
+after_validation :geocode, if: :address_changed?
+
 end
