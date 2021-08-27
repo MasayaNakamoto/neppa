@@ -44,6 +44,8 @@
           </table>
     </div>
 
+　　<div id="map"></div>
+
    <div class="row pt-4 mb-5">
     <div class="col-md-6 pt-4">
      <div class="new-comment">
@@ -68,9 +70,6 @@
      </div>
      <%= paginate @comments %>
    </div>
-
-    <!--<div id="map" style="width:620px; height:400px;"></div>-->
-    <div id="map"></div>
 </div>
 
 
@@ -106,21 +105,10 @@
 </script>
 
 <style type="text/css">
-  #map { height: 200px;
-         width: 70%;}
+  #map { height: 500px;
+         width: 70%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        }
 </style>
-
-
-<!--<script type="text/javascript">-->
-<!--        function initMap() {-->
-<!--          var maps = document.getElementById("map");-->
-<!--          var opts = {-->
-<!--            zoom: 15,-->
-<!--            center: new google.maps.LatLng(<%#= @shop.latitude %>, lng: <%#= @shop.longitude %>)-->
-<!--          };-->
-<!--          var map = new google.maps.Map(maps, opts);-->
-<!--        }-->
-<!--</script>-->
-
-<!--<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2oZfkXExk_6nTFys94pglwU5jmUVTWI&callback=initMap" async defer >-->
-<!--</script>-->
