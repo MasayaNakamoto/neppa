@@ -1,54 +1,53 @@
 <div class="container">
- <div class="row">
-  <h3 class="pt-3 ml-5"><span style="background-color:#EEEEEE">店舗一覧</span></h3>
-  <div class="search-form pt-3 ml-5">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword, placeholder: "店舗名または都道府県" %>
-    <%= f.submit "検索" %>
-  <% end %>
+  <div class="row">
+   <h3 class="pt-3 ml-5"><span style="background-color:#EEEEEE">店舗一覧</span></h3>
+   <div class="search-form pt-3 ml-5">
+   <%= form_with url: search_path, method: :get, local: true do |f| %>
+     <%= f.text_field :keyword, value: @keyword, placeholder: "店舗名または都道府県" %>
+     <%= f.submit "検索" %>
+   <% end %>
+   </div>
   </div>
- </div>
-    <div class="row row pt-4 mb-5">
-     <div class="col-2">
-      <table class = "table table-bordered">
-        <tr class="table-active">
-           <th>ジャンル検索</th>
-        </tr>
-        <% @genres.each do |genre| %>
-        <tr>
-          <td>
-          <%= link_to genre.name, shops_path(genre: genre.id) %>
-          <span class="badge badge-primary badge-pill"><%= genre.shops.count %></span>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+     <div class="row row pt-4 mb-5">
+      <div class="col-2">
+       <table class = "table table-bordered">
+         <tr class="table-active">
+            <th>ジャンル検索</th>
+         </tr>
+         <% @genres.each do |genre| %>
+         <tr>
+           <td>
+           <%= link_to genre.name, shops_path(genre: genre.id) %>
+           <span class="badge badge-primary badge-pill"><%= genre.shops.count %></span>
+           </td>
+         </tr>
+         <% end %>
+       </table>
+      </div>
+      <div class="col-md-10 mx-auto">
+       <table class="table table-bordered width=100%">
+        <thead class="thead-light">
+         <tr>
+          <th width="25%">店舗名</th>
+          <th width="15%">エリア</th>
+          <th width="15%">利用料金</th>
+          <th width="15%">いいね</th>
+          <th width="15%">コメント件数</th>
+         </tr>
+        </thead>
+      </div>
+      <% @shops.each do |shop| %>
+      <tr>
+       <td><%= attachment_image_tag shop, :image, width: '35%', height: 'auto' %>
+       <%= link_to shop_path(shop.id) do %>
+        <%= shop.name %>
+       <% end %> </td>
+       <td><%= shop.genre.name %></td>
+       <td><%= shop.price %></td>
+       <td><%= link_to "❤︎#{shop.favorites.count} ", shop_path(shop.id) %></td>
+       <td><%= link_to "#{shop.comments.count} 件", shop_path(shop.id) %></td>
+      </tr>
+      <% end %>
+       </table>
      </div>
-
-     <div class="col-md-10 mx-auto">
-      <table class="table table-bordered width=100%">
-       <thead class="thead-light">
-        <tr>
-         <th width="25%">店舗名</th>
-         <th width="15%">エリア</th>
-         <th width="15%">利用料金</th>
-         <th width="15%">いいね</th>
-         <th width="15%">コメント件数</th>
-        </tr>
-       </thead>
-     </div>
-     <% @shops.each do |shop| %>
-     <tr>
-      <td><%= attachment_image_tag shop, :image, width: '35%', height: 'auto' %>
-      <%= link_to shop_path(shop.id) do %>
-       <%= shop.name %>
-      <% end %> </td>
-      <td><%= shop.genre.name %></td>
-      <td><%= shop.price %></td>
-      <td><%= link_to "❤︎#{shop.favorites.count} ", shop_path(shop.id) %></td>
-      <td><%= link_to "#{shop.comments.count} 件", shop_path(shop.id) %></td>
-     </tr>
-     <% end %>
-      </table>
-    </div>
 </div>
