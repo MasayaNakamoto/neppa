@@ -50,7 +50,7 @@ describe '会員の登録〜注文のテスト' do
 
     context 'ヘッダーロゴのテスト' do
     it 'ヘッダーロゴを押すとトップ画面に遷移する' do
-        click_on()
+        click_button 'img'
         expect(current_path).to eq root_path
       end
     end
@@ -131,7 +131,7 @@ describe '会員の登録〜注文のテスト' do
 
       it '支払い方法の選択,住所の記入をし、確認画面へ進むボタンを押すと注文確認画面に遷移する' do #要確認
         choose 'order_payment_method_1'
-        choose 'order_address_select_2'
+        choose 'order_address_option_2'
         fill_in 'order[postal_code]', with: '1111111'
         fill_in 'order[address]', with: '東京都渋谷区'
         fill_in 'order[name]', with: '渋谷二郎'
@@ -147,7 +147,7 @@ describe '会員の登録〜注文のテスト' do
       before do
         visit new_order_path
         choose 'order_payment_method_1'
-        choose 'order_address_select_2'
+        choose 'order_address_option_2'
         fill_in 'order[postal_code]', with: '1111111'
         fill_in 'order[address]', with: '東京都渋谷区'
         fill_in 'order[name]', with: '渋谷二郎'
