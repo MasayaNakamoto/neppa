@@ -1,9 +1,8 @@
 <div class="container">
   <h1>配送先一覧・登録</h1>
   　<%= render 'addresses/new', address: @address %>
-    <div class="row pt-4">
-      <table class="table table-bordered">
-
+ <div class="row pt-4">
+  <table class="table table-bordered">
           <tr class="table-active">
             <th>郵便番号</th>
             <th>住所</th>
@@ -19,5 +18,6 @@
             <td> <%= link_to "削除", address_path(address.id),class: "btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
           </tr>
           <% end %>
-  </div>
+  </table>
+ </div>
 </div>
