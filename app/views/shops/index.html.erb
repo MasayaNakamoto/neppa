@@ -43,7 +43,7 @@
         <%= shop.name %>
        <% end %> </td>
        <td><%= shop.genre.name %></td>
-       <td><%= shop.price %></td>
+       <td><%= converting_to_jpy(shop.price) %></td>
        <td><%= link_to "❤︎#{shop.favorites.count} ", shop_path(shop.id) %></td>
        <td><%= link_to "#{shop.comments.count} 件", shop_path(shop.id) %></td>
       </tr>
