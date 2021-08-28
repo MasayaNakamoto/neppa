@@ -50,7 +50,7 @@ describe '会員の登録〜注文のテスト' do
 
     context 'ヘッダーロゴのテスト' do
     it 'ヘッダーロゴを押すとトップ画面に遷移する' do
-        click_button 'img'
+        click_link 'logoimg'
         expect(current_path).to eq root_path
       end
     end
@@ -90,7 +90,7 @@ describe '会員の登録〜注文のテスト' do
         visit cart_items_path
         expect(page).to have_content item.name
         expect(page).to have_content item.add_tax_price
-        expect(page).to have_selector ("input[value='1']")
+        expect(page).to have_select('cart_item_amount', selected: '1')
         expect(page).to have_content item.add_tax_price
       end
     end
@@ -109,9 +109,9 @@ describe '会員の登録〜注文のテスト' do
       end
 
       it '商品の個数を変更し、更新ボタンを押すと合計表示が正しく表示される' do
-        fill_in 'cart_item[amount]', with: '3'
+        select '3', from: 'cart_item_amount'
         click_button '変更'
-        expect(page).to have_content (item.price * 1.1) * 3
+        expect(page).to have_content item.add_tax_price * 3
       end
 
       it '情報入力に進むボタンを押すと情報入力画面に遷移する' do
@@ -130,8 +130,8 @@ describe '会員の登録〜注文のテスト' do
       end
 
       it '支払い方法の選択,住所の記入をし、確認画面へ進むボタンを押すと注文確認画面に遷移する' do #要確認
-        choose 'order_payment_method_1'
-        choose 'order_address_option_2'
+        choose 'order_payment_method_銀行振込'
+        choose 'order_address_option_1'
         fill_in 'order[postal_code]', with: '1111111'
         fill_in 'order[address]', with: '東京都渋谷区'
         fill_in 'order[name]', with: '渋谷二郎'
@@ -146,8 +146,8 @@ describe '会員の登録〜注文のテスト' do
 
       before do
         visit new_order_path
-        choose 'order_payment_method_1'
-        choose 'order_address_option_2'
+        choose 'order_payment_method_銀行振込'
+        choose 'order_address_option_1'
         fill_in 'order[postal_code]', with: '1111111'
         fill_in 'order[address]', with: '東京都渋谷区'
         fill_in 'order[name]', with: '渋谷二郎'
@@ -156,23 +156,11 @@ describe '会員の登録〜注文のテスト' do
 
      it '選択した商品、合計金額、配送方法などが表示されている' do
         expect(page).to have_content item.name
-        expect(page).to have_content ((item.price * 1.1) * cart_item.amount + 500).to_s(:delimited)
+        expect(page).to have_content (item.add_tax_price * cart_item.amount + 500).to_s(:delimited)
          expect(page).to have_content '銀行振込'
       end
-
-      # it '確定ボタンを押すとサンクスページに遷移する' do
-      #   click_button '注文を確定する'
-      #   expect(current_path).to eq complete_path
-      # end
     end
 
-    # context 'サンクスページのテスト' do
-    #   it 'ヘッダーのマイページへのリンクを押すとマイページに遷移する' do
-    #     visit orders_complete_path
-    #     click_link 'マイページ'
-    #     expect(current_path).to eq customer_path
-    #   end
-    # end
 
     context 'マイページのテスト' do
       it '注文履歴の一覧のリンクを押すと注文履歴一覧画面へ遷移する' do
@@ -205,17 +193,6 @@ describe '会員の登録〜注文のテスト' do
       before do
         visit order_path(1)
       end
-
-      # it '注文内容が正しく表示されている' do
-      #   expect(page).to have_content order.created_at
-      #   expect(page).to have_content order.address
-      #   expect(page).to have_content order.total_price
-      #   expect(page).to have_content '銀行振込'
-      # end
-
-      # it 'ステータスが「入金待ち」になっている' do
-      #   expect(page).to have_content '入金待ち'
-      # end
     end
   end
 end
