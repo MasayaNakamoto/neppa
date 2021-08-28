@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get 'homes/top'
+      get '/index/:id' => 'homes#index'
     end
 
     devise_for :admins, controllers: {
