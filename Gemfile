@@ -74,6 +74,8 @@ gem 'kaminari','~> 1.2.1'
 gem 'byebug'
 gem 'font-awesome-sass', '~> 5.13'
 gem "geocoder"
+gem 'faker'
+gem 'gimei'
 
 gem "dotenv-rails"
 group :production do

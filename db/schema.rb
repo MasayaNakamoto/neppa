@@ -68,8 +68,6 @@ ActiveRecord::Schema.define(version: 2021_08_26_025226) do
     t.string "first_name"
     t.string "last_name_kana"
     t.string "first_name_kana"
-    t.string "address"
-    t.string "post_code"
     t.string "phone_number"
     t.boolean "is_deleted"
     t.datetime "created_at", null: false
