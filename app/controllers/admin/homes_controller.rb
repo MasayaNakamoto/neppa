@@ -11,7 +11,6 @@ class Admin::HomesController < ApplicationController
     render :top
   end
 
-
   private
 
   def order_params

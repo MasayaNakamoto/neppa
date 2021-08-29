@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class='mx-auto col-9 mb-4'>
-      <!--サクセスメッセージ-->
       <% if flash[:success] %>
         <div class="alert alert-success" role="alert">
           <%= flash[:success] %>
@@ -28,7 +27,6 @@
                 <%= shop.name %>
               <% end %>
             </td>
-            <!--価格表示を３桁区切りにしたいのでconverting_to_jpyを追記する件解決する-->
             <td><%= shop.price %></td>
           </tr>
         <% end %>

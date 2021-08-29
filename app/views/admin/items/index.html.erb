@@ -29,7 +29,6 @@
                 <%= item.name %>
               <% end %>
             </td>
-            <!--価格表示を３桁区切りにしたいのでconverting_to_jpyを追記-->
             <td><%= converting_to_jpy(item.price) %></td>
             <td>
               <% if item.is_active == true %>

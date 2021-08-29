@@ -22,6 +22,7 @@
   border-radius: 20px;
 }
 
+// Main画像スライドの設定
 #box{
   padding: 50px;
   margin : 0 auto;
@@ -50,41 +51,22 @@
 }
 
 .pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
+  border: none;
+  color: #696969;
 }
 
-/* 表示しているページ番号のデザイン */
+
 .pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  background: #93c9ff;
+  border-radius: 15px;
 }
 
+// マップの設定
 #map{
   height: 100%;
 }
 
-// .main_visual_top{
-//   position: absolute;
-//   width: 0;
-//   height: 0;
-//   border-style: solid;
-//   border-width: 200px 200px 0 0;
-//   border-color: #ffffff transparent transparent transparent;
-//   z-index:100;
-// }
-// .main_visual_under{
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   width: 0;
-//   height: 0;
-//   border-style: solid;
-//   border-width: 0 0 200px 200px;
-//   border-color: transparent transparent #ffffff transparent;
-//   z-index:100;
-// }
-
+// Main画像スライドのコンテンツの設定
 .main-visual-content {
   position: absolute;
   top: 0;
@@ -96,16 +78,16 @@
   margin-bottom: 0;
   color: #444444;
   z-index: 101;
-  // z-indexとはボックスの重なり順序を指定するプロパティ
 }
 
 .main-visual-text {
-  color: #fff; /* 文字色を白に変更 */
+  color: #fff;
   text-align: center;
   margin: 0 auto;
   font-size: 35px;
 }
 
+// 基礎設定
 header, h1, p, h2, h3, h4, h5, h6, td, th, form, nav {
 font-family: 'arial unicode ms', 'Caveat', cursive;
 }
@@ -114,15 +96,16 @@ font-family: 'arial unicode ms', 'Caveat', cursive;
 }
 
 body{
-  // background-color: #ffebcd;
   background-image: url(back.png) ;
   background-color: rgba(0, 0, 0, 1);
 }
 
+// 表の背景色設定
 td{
   background-color: #ffffff;
 }
 
+// TOPのコンテンツアニメーションの設定
 .sa {
   opacity: 0;
   transition: all .5s ease;
@@ -145,9 +128,8 @@ td{
   transform: translate(0, 100px);
 }
 
-/* Loading背景画面設定　*/
+/* Loading画面 */
 #splash {
-    /*fixedで全面に固定*/
   position: fixed;
   width: 100%;
   height: 100%;
@@ -157,7 +139,6 @@ td{
   color:#fff;
 }
 
-/* Loading画像中央配置　*/
 #splash_logo {
   position: absolute;
   top: 50%;
@@ -165,13 +146,10 @@ td{
   transform: translate(-50%, -50%);
 }
 
-/* Loading アイコンの大きさ設定　*/
 #splash_logo img {
   width: 100vw;
   height: 69vw;
 }
-
-/* fadeUpをするアイコンの動き */
 
 .fadeUp{
 animation-name: fadeUpAnime;
@@ -194,6 +172,7 @@ opacity: 0;
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+// タイトルのアニメーション
 .title {
   display: flex;
   justify-content: center;
@@ -230,9 +209,7 @@ opacity: 0;
   transition-delay: 0.30s;
 }
 
-
-
-
+// Aboutページの設定
 .saunabody {
   width: 100%;
   height: 100%;

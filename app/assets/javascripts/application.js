@@ -21,13 +21,11 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-// $(document).ready(function () {
 　$("#images").skippr({
-    // スライドショーの変化 ("fade" or "slide")
+    // スライドショーの変化
     transition : 'slide',
     // 変化に係る時間(ミリ秒)
     speed : 500,
-    // easingの種類
     easing : 'easeOutQuart',
     // ナビゲーションの形("block" or "bubble")
     navType : 'block',
@@ -48,7 +46,6 @@ $(document).on('turbolinks:load', function() {
 
 /*global $*/
 
-// $(window).on('load',function(){
 $(document).on('turbolinks:load', function() {
   $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
   $("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト

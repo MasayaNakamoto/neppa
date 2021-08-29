@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
     if params[:genre].present?
     @shops = Shop.where(genre_id: params[:genre])
     end
-  # presentメソッドはオブジェクトであるレシーバーの値が存在すればtrue、存在しなければfalseを返すメソッド
+  # memo:presentメソッドはオブジェクトであるレシーバーの値が存在すればtrue、存在しなければfalseを返すメソッド
   end
 
   def show
