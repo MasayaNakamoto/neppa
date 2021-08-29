@@ -30,19 +30,19 @@
   height: 700px;
 }
 .image1 {
-  background-image: image-url(logo.png);
+  background-image: image-url("logo.png");
   border-radius: 20px;
 }
 .image2 {
-  background-image: image-url(sauna.jpg);
+  background-image: image-url("sauna.jpg");
   border-radius: 20px;
 }
 .image3 {
-  background-image: image-url(ohuro.jpg);
+  background-image: image-url("ohuro.jpg");
   border-radius: 20px;
 }
 .image4 {
-  background-image: image-url(stone.jpg);
+  background-image: image-url("stone.jpg");
   border-radius: 20px;
 }
 
@@ -96,7 +96,7 @@ font-family: 'arial unicode ms', 'Caveat', cursive;
 }
 
 body{
-  background-image: image-url(back.png) ;
+  background-image: image-url("back.png") ;
   background-color: rgba(0, 0, 0, 1);
 }
 
