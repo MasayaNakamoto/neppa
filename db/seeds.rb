@@ -51,38 +51,6 @@ Customer.create!(
   )
 end
 
-# Item.create!(
-#   name: "バスタオル",
-#   introduction: "お風呂屋さんの必需品",
-#   price: 1200,
-#   is_active: true,
-#   image: File.open("app/assets/images/bath.jpg"))
-# Item.create!(
-#   name: "洗顔",
-#   introduction: "スキンケア大事",
-#   price: 800,
-#   is_active: true,
-#   image: File.open("app/assets/images/face.jpg"))
-# Item.create!(
-#   name: "化粧水&乳液",
-#   introduction: "男は関係ないなんて時代じゃない",
-#   price: 1200,
-#   is_active: true,
-#   image: File.open("app/assets/images/water.jpg"))
-# Item.create!(
-#   name: "移動用サンダル",
-#   introduction: "お風呂入ってから靴下履いて靴はくのだるい時あるよね",
-#   price: 2000,
-#   is_active: true,
-#   image: File.open("app/assets/images/sundle.jpg"))
-# Item.create!(
-#   name: "シャンプー",
-#   introduction: "サウナ後の傷んだ髪にケア",
-#   price: 1000,
-#   is_active: true,
-#   image: File.open("app/assets/images/water.jpg"))
-
-
 Genre.create!(name: "京都")
 Genre.create!(name: "大阪")
 Genre.create!(name: "滋賀")
@@ -90,14 +58,14 @@ Genre.create!(name: "兵庫")
 Genre.create!(name: "奈良")
 Genre.create!(name: "和歌山")
 
-Shop.create!(genre_id: 1, name: "みやこ温泉", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "京都府京都市山科区東野中井ノ上町", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 2, name: "まいどの湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "大阪府大阪市北区豊崎", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 3, name: "みずうみ湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "滋賀県近江八幡市長命寺町", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 4, name: "サウナ&スパこーべ", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "兵庫県尼崎市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 5, name: "しか温泉", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "奈良県大和郡山市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 6, name: "湯処みかん", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "和歌山県和歌山市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 1, name: "まいこの湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "京都府京都市北区", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
-Shop.create!(genre_id: 3, name: "SPA レイク", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "滋賀県草津市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 1, name: "みやこ温泉", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "京都府京都市山科区東野中井ノ上町", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 2, name: "まいどの湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "大阪府大阪市北区豊崎", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 3, name: "みずうみ湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "滋賀県近江八幡市長命寺町", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 4, name: "サウナ&スパこーべ", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "兵庫県尼崎市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 5, name: "しか温泉", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "奈良県大和郡山市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 6, name: "湯処みかん", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "和歌山県和歌山市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 1, name: "まいこの湯", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "京都府京都市北区", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
+Shop.create!(genre_id: 3, name: "SPA レイク", introduction: "※こちらはポートフォリオサイトのため架空のお店です", price: 1000, postal_code: 1234567, address: "滋賀県草津市", phone_number: 11112345678, homepage: "https://twitter.com/04_nakamoto04/", sauna: "サウナの温度は95度で屋外に設置。水風呂も屋外に設置されており、温度は12度。外気浴が出来るよう畳のコーナーあり。", image: File.open("app/assets/images/sauna.jpg"))
 
 
 
