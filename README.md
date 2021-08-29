@@ -1,5 +1,7 @@
 # Neppa
 
+https://media.giphy.com/media/016DQNqXZLnRYib4wb/giphy.gif?cid=790b7611838c8e3c33a6a0e5c8be5f7fd52348e3aa25526c&rid=giphy.gif&ct=g
+
 ## サイト概要
 * サウナが好きな作成者の「自分の住む関西のサウナ情報がまとまっているだけでなく、サウナーのリアルな意見も聞けるサイトが欲しい」
 という思いから、作成者の住む関西のサウナ情報をまとめ、ユーザーの声を反映させるべく
