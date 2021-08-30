@@ -6,6 +6,7 @@
 ![neppa_shop](https://user-images.githubusercontent.com/84171616/131289178-178d95c9-4b23-40fa-b492-6a1f39f40421.gif)
 
 ## エリアごとの表示やキーワード検索も可能です
+![neppa_search](https://user-images.githubusercontent.com/84171616/131290381-341099e0-ad2e-43db-a079-410a25a98e6d.gif)
 
 ## サウナグッズも購入できます
 ![neppa_item](https://user-images.githubusercontent.com/84171616/131286998-3f925f0b-ae02-4ec5-84c1-c1fd86812ae3.gif)
