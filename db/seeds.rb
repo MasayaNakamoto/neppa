@@ -37,7 +37,7 @@ Customer.create!(
   first_name_kana:"イイイ",
   phone_number:"0000000")
 
-
+# 書き方練習１
   [
   ["バスタオル", "お風呂屋さんの必需品", 1200, true, File.open("./app/assets/images/bath.jpeg")],
   ["洗顔", "スキンケア大事", 800, true, File.open("./app/assets/images/face.jpeg")],
@@ -51,6 +51,7 @@ Customer.create!(
   )
 end
 
+# 書き方練習２
 Genre.create!(name: "京都")
 Genre.create!(name: "大阪")
 Genre.create!(name: "滋賀")
