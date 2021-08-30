@@ -1,6 +1,11 @@
 # Neppa
-
+## TOPページ
 ![neppa_top](https://user-images.githubusercontent.com/84171616/131245719-e5192ad6-f43e-48f8-929e-15b2e8070392.gif)
+
+## 店舗情報　住所登録データがGoogleマップに反映されています
+![neppa_shop](https://user-images.githubusercontent.com/84171616/131289178-178d95c9-4b23-40fa-b492-6a1f39f40421.gif)
+
+## エリアごとの表示やキーワード検索も可能です
 
 ## サウナグッズも購入できます
 ![neppa_item](https://user-images.githubusercontent.com/84171616/131286998-3f925f0b-ae02-4ec5-84c1-c1fd86812ae3.gif)
