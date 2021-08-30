@@ -2,6 +2,10 @@
 
 ![neppa_top](https://user-images.githubusercontent.com/84171616/131245719-e5192ad6-f43e-48f8-929e-15b2e8070392.gif)
 
+## サウナグッズも購入できます
+![neppa_item](https://user-images.githubusercontent.com/84171616/131286998-3f925f0b-ae02-4ec5-84c1-c1fd86812ae3.gif)
+
+
 
 ## サイト概要
 * サウナが好きな作成者の「自分の住む関西のサウナ情報がまとまっているだけでなく、サウナーのリアルな意見も聞けるサイトが欲しい」
