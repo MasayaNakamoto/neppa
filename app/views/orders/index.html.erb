@@ -23,7 +23,7 @@
               <%= order_detail.item.name %>
             <% end %>
         </td>
-        <td><%= converting_to_jpy(order.total_price) %>円</td>
+        <td>￥<%= converting_to_jpy(order.total_price) %></td>
         <td><%= order.status %></td>
         <td><%= link_to "表示",order_path(order.id), class: "btn btn-primary btn-sm" %></td>
       </tr>

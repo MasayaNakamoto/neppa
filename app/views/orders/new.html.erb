@@ -19,11 +19,11 @@
               <%= attachment_image_tag cart_item.item, :image, width: '10%', height: 'auto' %>
              <%= cart_item.item.name %>
             </td>
-            <td><%= converting_to_jpy(cart_item.item.add_tax_price) %></td>
+            <td>￥<%= converting_to_jpy(cart_item.item.add_tax_price) %></td>
             <td>
               <%= cart_item.amount %>
             </td>
-            <td><%= converting_to_jpy(cart_item.item.add_tax_price * cart_item.amount) %></td>
+            <td>￥<%= converting_to_jpy(cart_item.item.add_tax_price * cart_item.amount) %></td>
           </tr>
             <% @sum += cart_item.item.add_tax_price * cart_item.amount %>
           <% end %>
@@ -33,7 +33,7 @@
      <tr>
       <td>合計金額</td>
       <td>
-       <%= converting_to_jpy(@sum) %>
+       ￥<%= converting_to_jpy(@sum) %>
       </td>
      </tr>
     </table>
