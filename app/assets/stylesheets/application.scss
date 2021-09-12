@@ -350,9 +350,10 @@ opacity: 0;
 
 @media screen and (max-width: 425px) {
   // ヘッダーのレスポンシブ修正
-  // header {
-  //   width: 100%;
-  // }
+  header {
+    width: 100%;
+    // ここに何を記載すべきか答えを見つけ出す
+  }
 
   // #logoimg{
   //   width: 25%;
