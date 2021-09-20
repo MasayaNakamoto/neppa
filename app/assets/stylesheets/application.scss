@@ -342,6 +342,8 @@ opacity: 0;
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
+
+// ここからレスポンシブ
 @media screen and (max-width: 425px) {
   header {
     width: 100%;
