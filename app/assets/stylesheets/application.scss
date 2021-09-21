@@ -345,14 +345,21 @@ opacity: 0;
 
 // ここからレスポンシブ
 @media screen and (max-width: 425px) {
+
+  // そもそもこれが反応していない
   header {
+    width: 100%;
+  }
+  .navbar-collapse {
     width: 100%;
   }
 
 
-  #logoimg{
-    width: 25%;
-  }
+//   .navbar-expand-lg .navbar-nav .nav-link {
+//     padding-right: 0.5rem;
+//     padding-left: 0.5rem;
+// }
+
 
   footer {
     width: 100%;
