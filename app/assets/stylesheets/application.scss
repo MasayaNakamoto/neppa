@@ -345,11 +345,12 @@ opacity: 0;
 
 // ここからレスポンシブ
 @media screen and (max-width: 425px) {
-  .navbar-brand{
-    width: auto;
-    margin: 0;
-    padding: 0;
-  }
+
+  // .navbar-brand{
+  //   width: auto;
+  //   margin: 0;
+  //   padding: 0;
+  // }
 
   footer {
     width: 100%;
