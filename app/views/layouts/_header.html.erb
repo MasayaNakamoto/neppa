@@ -60,7 +60,7 @@
 
 <div class="search-form">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword, placeholder: "店舗名または都道府県" %>
+    <%= f.text_field :keyword, value: @keyword, placeholder: "店舗名or都道府県" %>
     <%= f.submit "店舗検索" %>
   <% end %>
 </div>
