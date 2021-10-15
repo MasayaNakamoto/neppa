@@ -47,8 +47,8 @@ $(document).on('turbolinks:load', function() {
 /*global $*/
 
 $(document).on('turbolinks:load', function() {
-  $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
-  $("#splash_logo").delay(1200).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
+  $("#splash").delay(1500).fadeOut('slow');
+  $("#splash_logo").delay(1200).fadeOut('slow');
 
 const CLASSNAME = "-visible";
 const TIMEOUT = 1500;
