@@ -23,7 +23,6 @@
         <td>￥<%= converting_to_jpy(cart_item.item.add_tax_price) %></td>
         <td><%= cart_item.amount %></td>
         <td>￥<%= converting_to_jpy(cart_item.item.add_tax_price * cart_item.amount) %></td>
-           <!--ここはsum+=sub_total　と%= sub_total -->
        </tr>
     　  <% @sum += cart_item.item.add_tax_price * cart_item.amount %>
       </tbody>
